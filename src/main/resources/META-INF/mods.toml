@@ -1,0 +1,22 @@
+modLoader="javafml"
+loaderVersion="[43,)"
+license="All rights reserved"
+
+[[mods]]
+modId="difmod"
+version="${file.jarVersion}"
+displayName="DifMod"
+authors="kask"
+description='''
+A mod to change various damage multipliers for each player.
+'''
+
+[[dependencies.difmod]]
+    modId="forge"
+    mandatory=true
+    versionRange="[43,)"
+
+[[dependencies.difmod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.19.2,1.20)"
