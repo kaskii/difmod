@@ -35,11 +35,10 @@ jobs:
       - name: Validate Gradle Wrapper
         uses: gradle/wrapper-validation-action@v1
           
-      - name: Setup Gradle
+      - name: Setup and build with Gradle
         uses: gradle/gradle-build-action@v2
-
-      - name: Execute Gradle build
-        run: ./gradlew build --stacktrace --no-daemon
+        with:
+          arguments: build --stacktrace --no-daemon
         
       - name: Setting mod version
         run: |
@@ -53,9 +52,4 @@ jobs:
         with:
           name: ${{ env.package_name }}
           path: |
-            **/build/libs/
-            !build/libs/
-            !**/*-dev.jar
-            !**/*-shadow.jar
-            !**/*-transformProduction*.jar
-            !**/testmod*/
+            build/libs/
